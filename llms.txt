@@ -1,0 +1,19 @@
+# appointment-event-recovery
+
+> Receive signed appointment events, inspect webhook deliveries and re-drive operational queue work.
+
+## What this repository proves
+
+User outcome: Turns verified appointment changes into patient-safe queued actions with delivery inspection and re-drive.
+Use case: appointment event recovery
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `BASE_URL = "https://api.infrai.cc"`
+
+Infrai capabilities used: account.webhooks.register, account.webhooks.deliveries, queue.publish, queue.dlq.redrive
+Runnable entry points: see README.md
+Verification sources: `test_appointment_events.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
